@@ -1,0 +1,25 @@
+{
+  "name": "copy_inputs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AidarGatin/copy_inputs.git"
+  },
+  "author": "Aidar Gatin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AidarGatin/copy_inputs/issues"
+  },
+  "homepage": "https://github.com/AidarGatin/copy_inputs#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp-sass": "^2.3.2",
+    "sass-loader": "^4.0.2",
+    "gulp": "^3.9.1"
+  }
+}

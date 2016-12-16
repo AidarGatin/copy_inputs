@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    </script>
+
+    <title>Copy to clipboard</title>
+</head>
+
+<body>
+    <form class="form " action="">
+
+        <label class="clip">Name </label><input id="name" name="address_form[1]" value="Aidar"><br>
+        <label class="clip">Address </label><input id="address" name="address_form[2]" value="208 NW 6th Ave "><br>
+        <label class="clip">Zip </label><input id="zip" name="address_form[3]" value="33009"><br>
+        <button type="button" name="button" id="copy-button" onclick="copy('address_form');">Copy</button>
+        <a href="#" onclick="copy('address_form');">Copy</a>
+
+    </form>
+    <br>
+    <br>
+
+    <script type="text/javascript">
+        function copy(form_name) {
+            var string = '';
+            $('input[name^=' + form_name + ']').each(function() {
+                //  console.log($(this).val());
+                string += $(this).val() + '\n';
+            })
+            console.log(string);
+            $txa = $("<textarea />", {
+                val: string,
+                css: {
+                    position: "fixed",
+
+                }
+            }).appendTo("body").select();
+            document.execCommand('copy');
+            $txa.remove();
+        }
+
+        function clip(e) {
+            e.preventDefault();
+            //  var cont = $(this).html(), // Or use a custom source Element
+            var cont = $(this).next().val(); // Or use a custom source Element
+            $txt = $("<textarea />", {
+                    val: cont,
+                    css: {
+                        position: "fixed"
+                    }
+                }).appendTo("body").select(),
+                document.execCommand('copy');
+
+            $txt.remove();
+            console.log(cont);
+        }
+        $(".clip").on('click', clip);
+    </script>
+</body>
+
+</html>
